@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>resume builder</title>
+    <link rel="shortcut icon" href="resume.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+    <div class="container" id="cv-form">
+        <h1 class="text-center my-2">Resume Generator</h1>
+        <p class="text-center">My Learncode with somu</p>
+        <div class="row">
+            <div class="col-md-6">
+                <!-- first -->
+                <h3>Personal Informtion</h3>
+                <div class="form-froup">
+                    <label for="namefield">your name</label>
+                    <input type="text" id="namefield" class="form-control" placeholder="enter here"/>
+                </div>
+                <div class="form-froup mt-2">
+                    <label for="contactfield">your contact</label>
+                    <input type="text" id="contactfield" class="form-control" placeholder="enter here"/>
+                </div>
+                <div class="form-froup mt-2">
+                    <label for="address">your address</label>
+                    <textarea  id="addressfield" class="form-control" placeholder="enter here"></textarea>
+                </div>
+                <div class="form-group mt-3">
+                    <label for="">select your photo</label>
+                    <input id="imgfield" type="file" class="for-control" />
+                </div>
+                <p class="text-secondary my-3">Important Links</p>
+                <div class="form-froup mt-2">
+                    <label for="fbfield">Facebook</label>
+                    <input type="text" id="fbfield" class="form-control" placeholder="enter here"/>
+                </div>
+                <div class="form-froup mt-2">
+                    <label for="instafield">instagaram</label>
+                    <input type="text" id="instafield" class="form-control" placeholder="enter here"/>
+                </div>
+                <div class="form-froup mt-2">
+                    <label for="linkfield">linklen</label>
+                    <input type="text" id="linkfield" class="form-control" placeholder="enter here"/>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <!-- 2-->
+                <h3>Profestional Information</h3>
+                <div class="form-froup mt-2">
+                    <label for="">objective</label>
+                    <textarea  class="form-control" placeholder="enter here" rows="5" id="objectivefield"></textarea>
+                </div>
+                <div class="form-froup mt-2" id="we">
+                    <label for="">Work Expericence</label>
+                    <textarea  class="form-control wefield" placeholder="enter here" rows="3"></textarea>
+                    <!-- new textarea -->
+                    <div onclick="addNewWEfeild()" class="container text-center mt-2" id="weADDbutton">
+                        <button  class="btn btn-primary btn-sm">ADD</button>
+                    </div>
+                </div>
+                <div class="form-froup mt-2" id="aq">
+                    <label for="">Acadamic Qualification</label>
+                    <textarea  class="form-control eqfield" placeholder="enter here" rows="3"></textarea>
+                    <div onclick="addNewAQfeild()" class="container text-center mt-2" id="aqADDbutton">
+                        <button class="btn btn-primary btn-sm">ADD</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="container text-center my-2">
+            <button onclick="generatecv()" class="btn btn-primary btn-lg">Generate CV</button>
+        </div>
+    </div>
+
+
+
+
+    <!-- cvtemplte -->
+
+
+    <div class="container" id="cv-template">
+        <div class="row">
+            <div class="col-md-4 text-center py-5 background">
+                <!-- firstcol -->
+                <img src="https://campussafetyconference.com/wp-content/uploads/2020/08/iStock-476085198.jpg" id="imgtemplate" alt="" class="img-fluid myimg"/>
+                <div class="container">
+                    <p id="namet">somarajesh</p>
+                    <p id="contactt">+9144336727,+9912334244</p>
+                    <p id="addresst">563563/4524152 35 noida ,INDIA</p>
+
+                    <hr />
+                    <p id="fbt"><a href="#1">www.facebook.com</a></p>
+                    <p id="instat"><a href="#1">www.instagaram.com</a></p>
+                    <p id="linkt"><a href="#1">www.linkdln.com</a></p>
+                </div>
+            </div>
+            <div class="col-md-8 py-5">
+                <!-- secondcol -->
+                <h1 id="namet2" class="text-center" style="font-weight: 980;">Kunda somarajesh</h1>
+
+                <!-- objectibvecard -->
+                <div class="card mt-4">
+                    <div class="card-header" style="background-color: aquamarine;">
+                        <h3 class="h">Objective</h3>
+                    </div>
+                    <div class="card-body">
+                        <p id="objectivet">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam libero molestias voluptatem temporibus consequuntur earum quo velit sit, delectus eligendi deserunt eius. A, illo hic optio tenetur adipisci repellat impedit.</p>
+                    </div>
+                </div>
+                <!-- workexper -->
+                <div class="card mt-4">
+                    <div class="card-header" style="background-color: aquamarine;">
+                        <h3 class="h">Work Expericence</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="wet">
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, numquam.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, numquam.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, numquam.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- acadamicqualification -->
+                <div class="card mt-4">
+                    <div class="card-header" style="background-color: aquamarine;">
+                        <h3 class="h">Acadamic Qualification</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="aqt">
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, numquam.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, numquam.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, numquam.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="container mt-3 text-center">
+                    <button onclick="printcv()" class="btn" style="background-color: aquamarine;">print cv</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
